@@ -1,0 +1,55 @@
+<section class="welcome">
+    <h2>Bienvenue</h2>
+    <!-- boucle sur l'intro -->
+    <?php foreach ($intros as $intro) : ?>
+        <p><?= $intro['Content'] ?></p>
+    <?php endforeach ?>
+    <!-- boucle sur l'intro -->
+</section>
+<section class="main-content">
+    <div class="slide">
+        <img src="assets/images/home_slide1.jpg" alt="Kristina Litvjak">
+        <img src="assets/images/home_slide2.jpg" alt="pregnancy">
+        <img src="assets/images/home_slide3.jpg" alt="Isaac Del Toro">
+    </div>
+    <article>
+        <!-- boucle sur accueil -->
+        <?php foreach ($accueils as $accueil) : ?>
+            <p><?= $accueil['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur accueil -->
+    </article>
+    <div class="slide">
+        <img src="assets/images/home_slide4.jpg" alt="Chanel Baran">
+        <img src="assets/images/home_slide5.jpg" alt="Capsula Nudes">
+        <img src="assets/images/home_slide6.jpg" alt="coquelicot-champs">
+    </div>
+    <article>
+        <!-- boucle sur la conclusion -->
+        <?php foreach ($announcements as $announcement) : ?>
+            <p><?= $announcement['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur la conclusion -->
+    </article>
+</section>
+<section>
+    <article>
+        <!-- boucle sur la conclusion -->
+        <?php foreach ($conclusions as $conclusion) : ?>
+            <p><?= $conclusion['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur la conclusion -->
+    </article>
+</section>
+<section>    
+    <article>
+        <!-- boucle sur la citation -->
+        <?php foreach ($citations as $citation) : ?>
+            <cite><?= $citation['Content'] ?></cite>
+        <?php endforeach ?>
+        <!-- boucle sur la citation -->
+        <div>
+            <img src="assets/images/Brigid's Grove.jpg" alt="Brigid's Grove">
+        </div>
+    </article>
+</section>

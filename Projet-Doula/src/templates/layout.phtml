@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+	<link rel="icon" type="image/svg+xml" href="assets/images/icon/logo_ContinuumDoula.ico">
+	<meta name="description" content="Doula, accompagnement moral et pratique à une femme ou un couple durant la grossesse, la naissance et la période néonatale.">
+	<title>Continuum-doula</title>
+</head>
+
+<body>
+	<header>
+		<div class="login">
+		<div id="toolbar" class="toolbar" role="toolbar">
+				<?php
+				//si je suis connecté, j'affiche pseudo + bouton de déconnexion
+				//sinon j'affiche le bouton de connexion
+				if (\Session::isConnected()):
+				?>
+				<p>Bienvenue maître <?= \Session::getFirstName();?></p>
+				<a href="index.php?controller=user&task=out">Se déconnecter</a>
+				<?php
+				else:
+				?>
+				<a href="index.php?controller=user&task=loginForm">Administration</a>
+				<?php 
+				endif;
+				?>
+		</div>
+		<div class="main-logo">
+			<a href="index.php?controller=home"><img class="logo" src="assets/images/logo_ContinuumDoula.webp" alt="Logo Continuum Doula"></a>
+			<nav>
+				<ul class="menu">
+					<li>
+						<a href="index.php?controller=home">Accueil</a>
+					</li>
+					<li>
+						<a href="index.php?controller=services">Mes services</a>
+					</li>
+					<li>
+						<a href="index.php?controller=price">Tarifs</a>
+					</li>
+					<li>
+						<a href="index.php?controller=who">Qui suis-je ?</a>
+					</li>
+					<li>
+						<a href="index.php?controller=contact">Contact</a>
+					</li>
+					<li>
+						<a href="index.php?controller=sources">Ressources</a>
+					</li>
+				</ul>
+			</nav>
+		</div>	
+		<div>
+		<?php
+		//si je suis connecté, j'affiche pseudo + bouton de déconnexion
+		//sinon j'affiche le bouton de connexion
+		if (\Session::isConnected()):
+		?>
+		<ul class="menu">
+			<li>
+				<a href="index.php?controller=account">Utilisateurs</a>
+			</li>
+			<li>
+				<a href="index.php?controller=articles">Articles</a>
+			</li>
+			<li>
+				<a href="index.php?controller=media">Photothèques</a>
+			</li>
+			<li>
+				<a href="index.php?controller=redTent">Tente rouge</a>
+			</li>
+		</ul>
+		<?php 
+		endif;
+		?>
+		</div>
+
+	</header>
+	<main class="container">
+		<?php if (\Session::hasFlashes('error')): ?>
+		<div class="alert-section">
+	        <div class="alert alert-element alert-danger is-active">
+	            <div class="icon">
+	                <img src="assets/images/icon/bell.svg" alt="notification icon" />
+	            </div>
+	            <div class="text">
+	                <?php foreach (\Session::getFlashes('error') as $message): ?>
+						<p><?=$message?></p>
+					<?php endforeach?>
+	            </div>
+	        </div>
+	    </div>
+		<?php endif?>
+
+		<?php if (\Session::hasFlashes('success')): ?>
+		<div class="alert-section">
+	        <div class="alert alert-element alert-success is-active">
+	            <div class="icon">
+	                <img src="assets/images/icon/bell.svg" alt="notification icon" />
+	            </div>
+	            <div class="text">
+	                <?php foreach (\Session::getFlashes('success') as $message): ?>
+						<p><?=$message?></p>
+					<?php endforeach?>
+	            </div>
+	        </div>
+	    </div>
+		<?php endif?>
+		<!-- variable template qu'on retrouve en argument de la méthode render-->
+        <?= $pageContent ?> 
+	</main>
+	<footer>
+		<div>
+			<section>
+				<h3>Sur les réseaux sociaux</h3>
+				<div>
+					<a href="#"><i class="icon-facebook"></i></a>
+					<a href="#"><i class="icon-instagram"></i></a>
+					<a href="#"><i class="icon-twitter"></i></a>
+					<a href="#"><i class="icon-linkedin"></i></a>
+				</div>
+			</section>
+			<address>
+				<a href="mailto:continuum.doula@gmail.com">continuum.doula@gmail.com</a><br>
+				<a href="tel:+33756839845">07 56 83 98 45</a>
+			</address>
+		</div>
+		<div class="license container" role="article">
+			<a href="index.php?controller=legal">Mentions légales</a>
+			© Continuum Doula 2020
+		</div>
+	</footer>
+
+</body>
+
+</html>
+        
+ 

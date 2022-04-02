@@ -1,0 +1,69 @@
+<h2> Gestions des utilisateurs !</h2>
+<!-- list des users -->
+<div class="table-responsive">
+				<table>
+					<thead>
+						<tr>
+							<th>Nom</th>
+							<th>Prénom</th>
+                            <th>Email</th>
+                            <th>créé le</th>
+                            <th>dernière connexion</th>
+							<th>Admin</th>
+							<th>Changer le rôle</th>
+                            <th>Suppression</th>
+						</tr>
+					</thead>
+					<tbody>
+					    <!-- boucle sur les users -->
+					    <?php foreach($list as $item): ?>
+						<tr>
+							<td><?= htmlspecialchars($item['LastName']); ?></td>
+							<td><?= htmlspecialchars($item['FirstName']); ?></td>
+                            <td><?= htmlspecialchars($item['Email']); ?></td>
+                            <td><?= htmlspecialchars($item['Created_at']); ?></td>
+                            <td><?= htmlspecialchars($item['Last_login']); ?></td>
+							<td>
+								<?php
+								//afficher oui si admin sinon afficher non
+								
+								if (intval($item['Admin']) ==1):
+									echo 'Oui';
+								else:
+									echo 'Non';
+								endif;
+								?>
+							</td>
+							<td>
+                                <?php
+								//afficher oui si admin sinon afficher non
+								
+								if (intval($item['Admin']) ==1):
+                                ?>    
+                                    <a class="btn btn-sm btn-outline-secondary" href="index.php?controller=Account&task=updateRole&id=<?= intval($item['Id']);?>"><i class="fa fa-pencil"></i>Retirer</a>
+                                <?php    
+								else:
+                                ?>    
+                                    <a class="btn btn-sm btn-outline-secondary" href="index.php?controller=Account&task=updateRole&id=<?= intval($item['Id']);?>"><i class="fa fa-pencil"></i>Ajout</a>
+                                <?php
+								endif;
+								?>
+							</td>
+							<td>
+								<a class="btn btn-sm btn-outline-secondary"  href="index.php?controller=Account&task=delete&id=<?= intval($item['Id']);?>"><i class="fa fa-pencil"></i>Suppression</a>
+							</td>
+						</tr>
+						<?php endforeach; ?>
+						<!-- boucle sur les users -->
+					</tbody>
+				</table>
+</div>
+<div>                                              
+    <form>            
+        <fieldset>
+            <legend>Ajout d'un compte utilisateur</legend>
+            <div><a href="index.php?controller=user&task=index">Créer un compte</a></div>
+        </fieldset>
+    </form>    
+</div> 
+<!-- list des users -->
