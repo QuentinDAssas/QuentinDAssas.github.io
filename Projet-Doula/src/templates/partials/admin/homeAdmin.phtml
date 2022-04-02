@@ -1,0 +1,100 @@
+<section class="welcome">
+    <hr class="welcome-hr">
+    <article>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($intros as $intro) : ?>
+            <p><?= $intro['Content'] ?></p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $intro['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                    <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $intro['Id'] ?>">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+	</article>
+</section>
+<section>
+    <div class="slide">
+        <?php foreach ($mediaAccueils as $mediaAccueil) : ?>
+            <img src="<?=$mediaAccueil['FilesPath'].$mediaAccueil['Name'] ?>" alt="<?= $mediaAccueil['Content'] ?>"></img>
+        <?php endforeach ?>
+    </div>
+    <article>
+    <!-- boucle sur accueil -->
+    <?php foreach ($accueils as $accueil) : ?>
+        <p><?= $accueil['Content'] ?></p>
+        <div class= "button">
+            <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $accueil['Id'] ?>"method="POST">
+                <input type="submit" value="modification">
+            </form>
+            </form>
+                <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $intro['Id'] ?>">
+            </form>
+        </div>
+    <?php endforeach ?>
+    <!-- boucle sur accueil -->
+    </article>
+    <div class="slide">
+        <?php foreach ($mediaAnnouncements as $mediaAnnouncement) : ?>
+            <img src="<?=$mediaAnnouncement['FilesPath'].$mediaAnnouncement['Name'] ?>" alt="<?= $mediaAnnouncement['Content'] ?>"></img>
+        <?php endforeach ?>
+    </div>
+    <article>
+    <!-- boucle sur la conclusion -->
+    <?php foreach ($announcements as $announcement) : ?>
+        <p><?= $announcement['Content'] ?></p>
+        <div class= "button">
+            <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $announcement['Id'] ?>"method="POST">
+                <input type="submit" value="modification">
+            </form>
+            </form>
+                <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $intro['Id'] ?>">
+            </form>
+        </div>
+    <?php endforeach ?>
+    <!-- boucle sur la conclusion -->
+	</article>
+</section>
+<section>
+    <article>
+    <!-- boucle sur la conclusion -->
+    <?php foreach ($conclusions as $conclusion) : ?>
+        <p><?= $conclusion['Content'] ?></p>
+        <div class= "button">
+            <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $conclusion['Id'] ?>"method="POST">
+                <input type="submit" value="modification">
+            </form>
+            </form>
+                <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $intro['Id'] ?>">
+            </form>
+        </div>
+    <?php endforeach ?>
+    <!-- boucle sur la conclusion -->
+	</article>
+</section>
+<section>    
+    <article class="citation">
+        <!-- boucle sur la citation -->
+        <?php foreach ($citations as $citation) : ?>
+        <div>
+            <cite><?= $citation['Content'] ?></cite>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $citation['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                </form>
+                    <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $intro['Id'] ?>">
+                </form>
+            </div>
+        </div>
+            <div>
+            <?php foreach ($mediaCitations as $mediaCitation) : ?>
+                <img src="<?=$mediaCitation['FilesPath'].$mediaCitation['Name']?>" alt="<?= $mediaCitation['Content']?>"></img>
+            <?php endforeach ?>
+            </div>
+        <?php endforeach ?>
+    <!-- boucle sur la citation -->
+	</article>
+</section>

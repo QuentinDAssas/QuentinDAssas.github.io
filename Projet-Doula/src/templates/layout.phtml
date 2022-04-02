@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css" />
+	<script src="https://kit.fontawesome.com/5958901c89.js" crossorigin="anonymous"></script>
+	<link rel="icon" type="image/svg+xml" href="assets/images/icon/favicon.ico">
+	<meta name="description" content="Doula, accompagnement moral et pratique à une femme ou un couple durant la grossesse, la naissance et la période néonatale.">
+	<title>Continuum-doula</title>
+</head>
+	<body>
+		<header>
+			<div class="login">
+				<a href="index.php?controller=user&task=loginForm">Administration</a>
+			<div class="main-logo">
+				<a href="index.php?controller=home"><img class="logo" src="assets/images/logo/logoContinuumDoulaHeader.webp" alt="Logo de Continuum Doula"></a>
+				<nav>
+					<ul class="menu">
+						<a href="index.php?controller=home"><li>Accueil</li></a>
+						<a href="index.php?controller=Services">
+							<li class="scrolling-menu"><span class="color">Mes services</span>
+								<ul class ="sub-menu">
+									<a href="index.php?controller=Sub\Birth"><li>Accompagnement à la naissance</li></a>
+									<a href="index.php?controller=Sub\Postnatal"><li>Accompagnement post-natal</li></a>
+									<a href="index.php?controller=Sub\Perinatal"><li>Soutien périnatal</li></a>
+									<a href="index.php?controller=Sub\BlessingWay"><li>Blessing way</li></a>
+									<a href="index.php?controller=Sub\Rebozo"><li>Soin Rebozo</li></a>
+									<a href="index.php?controller=Sub\RedTent"><li>Tente rouge</li></a>
+								</ul>
+							</li>
+						</a>
+						<a href="index.php?controller=price"><li>Tarifs</li></a>
+						<a href="index.php?controller=who"><li>Qui suis-je ?</li></a>
+						<a href="index.php?controller=contact"><li>Contact</li></a>
+						<a href="index.php?controller=resources"><li>Ressources</li></a>
+					</ul>
+				</nav>
+			</div>
+		</header>
+	
+		<main class="container">
+			<?php if (\Session::hasFlashes('error')): ?>
+			<div class="alert-section">
+		        <div class="alert alert-element alert-danger is-active">
+		            <div class="icon">
+		                <img src="assets/images/icon/bell.svg" alt="notification icon" />
+		            </div>
+		            <div class="text">
+		                <?php foreach (\Session::getFlashes('error') as $message): ?>
+							<p><?=$message?></p>
+						<?php endforeach?>
+		            </div>
+		        </div>
+		    </div>
+			<?php endif?>
+	
+			<?php if (\Session::hasFlashes('success')): ?>
+			<div class="alert-section">
+		        <div class="alert alert-element alert-success is-active">
+		            <div class="icon">
+		                <img src="assets/images/icon/bell.svg" alt="notification icon" />
+		            </div>
+		            <div class="text">
+		                <?php foreach (\Session::getFlashes('success') as $message): ?>
+							<p><?=$message?></p>
+						<?php endforeach?>
+		            </div>
+		        </div>
+		    </div>
+			<?php endif?>
+			<!-- variable template qu'on retrouve en argument de la méthode render-->
+	        <?= $pageContent ?>
+		</main>
+		
+		<footer class="container">
+			<hr class="footer-hr">
+			<div class="license-container">
+				<div class="copyright">
+					<a href="index.php?controller=legal">Mentions légales</a>
+					<p>© Continuum Doula 2020</p>
+				</div>
+				<div>
+					<img class="img-footer" src="assets/images/logo/logoContinuumDoulaFooter.ico" alt="Logo de Continuum Doula footer">
+				</div>
+				<div>
+					<a href="https://www.facebook.com/continuum.doula/" class="facebook"><i class="fab fa-facebook-square"></i></a>
+					<a href="https://www.instagram.com/continuum.doula/" class="instagram"><i class="fab fa-instagram-square"></i></a>
+					<address>
+						<a href="mailto:continuum.doula@gmail.com" ><i class="fas fa-envelope"></i> continuum.doula@gmail.com</a><br>
+						<a href="tel:+33756839845"><i class="fas fa-phone-alt"></i> 07 56 83 98 45</a>
+					</address>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>
+        
+ 

@@ -1,0 +1,29 @@
+<?php if (\Session::hasFlashes('error')): ?>
+<div class="alert-section">
+    <div class="alert alert-element alert-danger is-active">
+        <div class="icon">
+            <img src="<?= $tplVars['WWW_URL']; ?>assets/images/icon/bell.svg" alt="notification icon" />
+        </div>
+        <div class="text">
+            <?php foreach (\Session::getFlashes('error') as $message): ?>
+				<p><?=$message?></p>
+			<?php endforeach?>
+        </div>
+    </div>
+</div>
+<?php endif?>
+
+<?php if (\Session::hasFlashes('success')): ?>
+<div class="alert-section">
+    <div class="alert alert-element alert-success is-active">
+        <div class="icon">
+            <img src="<?= $tplVars['WWW_URL']; ?>assets/images/icon/bell.svg" alt="notification icon" />
+        </div>
+        <div class="text">
+            <?php foreach (\Session::getFlashes('success') as $message): ?>
+				<p><?=$message?></p>
+			<?php endforeach?>
+        </div>
+    </div>
+</div>
+<?php endif?>

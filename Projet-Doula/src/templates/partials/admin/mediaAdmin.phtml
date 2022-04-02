@@ -1,0 +1,122 @@
+<?php
+if(!$medias):
+?>
+    <h2> Photothèques !</h2>
+    <!-- Trigger/Open The Modal -->
+    <div>
+        <h2>Listes des images</h2>
+        <div>
+            <figure class="phototheque">
+                <?php foreach ($AllMedias as $AllMedia) : ?>
+                    <img src="<?=$AllMedia['FilesPath'].$AllMedia['Name'] ?>" alt="<?= $AllMedia['Content'] ?>"></img>
+                    <figcaption><?= $AllMedia['Name']?></figcaption>
+                    <div>
+                        <form action ="index.php?controller=Admin\MediaAdmin&task=index&id=<?= $AllMedia['Id'] ?>"method="POST">
+                            <input type="submit" value="Détails">
+                        </form>
+                        </form>
+                            <input class="delete-btn" type="submit" value="suppression" data-table="media" data-id="<?= $AllMedia['Id'] ?>">
+                        </form>
+                    </div>
+                <?php endforeach ?>
+            </figure>
+        </div>
+        <button id="mediaBtn">Ajouter une image</button>
+    </div>
+    <!-- The Modal -->
+    <div id="modalMedia" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="closeMedia">&times;</span>
+        <form action="index.php?controller=Admin\MediaAdmin&task=uploadImg" method="POST" enctype="multipart/form-data">
+            <fieldset>
+                <div>
+                    <label for="name">Nom de l'image :</label>
+                    <input type="text" name="name" required/>
+                </div>
+                <div>
+                    <label for="type">Quelle catégorie ?</label>
+                    <select id="type"  name="type" required>
+                        <option value="media">Choisie la catégorie</option>
+                        <option value="images">Images</option>
+                        <option value="logo">logo</option>
+                        <option value="favicon">favicon</option>
+                    </select>
+                </div>
+                <div id="selectorPages">
+                </div>
+                <div id="selectorCat">
+                </div>
+                <div id="description">
+                    <label for="content">Description:</label>
+                    <textarea name="content" rows="5" cols="35" required></textarea>
+                </div>
+                <div>
+                    <label for="file">Image :</label>
+                    <input type="file" name="image" required/>
+                </div>
+                <input type="submit" value="Ajouter l'image">
+            </fieldset>
+        </form>
+      </div>
+    </div>
+    <script src = "assets/JavaScript/ModalMedia.js"></script>
+<?php
+else:
+?>
+    <div>
+        <figure>
+            <img src="<?=$medias['FilesPath'].$medias['Name']?>" alt="<?= $medias['Content']?>"></img>
+            <figcaption><?= $medias['Name']?></figcaption>
+        </figure>
+    </div>
+    <?php
+    if(!$medias['subPages']):
+    ?>
+        <div>
+            <p> L'image se trouve sur la page <?= $medias['Page'] ?> et dans la catégorie <?= $medias['Category'] ?>.</p>
+        </div>
+        <?php
+        else:
+        ?>
+        <div>
+            <p> L'image se trouve sur la page <?= $medias['Page'] ?> sous la page <?= $medias['subPages'] ?> et dans la catégorie <?= $medias['Category'] ?>.</p>
+        </div>  
+    <?php 
+    endif;
+    ?>
+    <p>Chemin de l'image: <?= $medias['FilesPath']?></p>
+    <form action ="index.php?controller=Admin\MediaAdmin&task=updateImg&id=<?= $medias['Id']?>"method="POST">
+        <fieldset id="type">
+            <div>
+                <label for="content">Changer la description: </label>
+                <textarea name="content" rows="5" cols="50" required><?= $medias['Content']?></textarea>
+            </div>
+            <div id="pages">
+                <label for="pages">Changer la page?</label>
+                <select id="pagesSelect" name="pages" required>
+                    <option value="">Choisie la page</option>
+                    <option value="Home">Accueil</option>
+                    <option value="Services">Mes services</option>
+                    <option value="Price">Tarifs, Forfaits et Modalités</option>
+                    <option value="Who">Qui suis-je ?</option>
+                    <option value="Contact">Contact</option>
+                    <option value="Resources">Ressources</option>
+                    <option value="Legals">Mentions légales</option>
+                </select>
+            </div>
+            <div id="selectorCat">
+            </div>
+            <div>
+                <input type="submit" value="Modifier">
+            </div>
+        </fieldset>
+    </form>
+    <form action ="index.php?controller=Admin\MediaAdmin&task=index"method="POST">
+        <input type="submit" value="Retour">
+    </form>
+<?php 
+endif;
+?>
+<script src = "assets/JavaScript/Menu.js"></script>
+

@@ -1,0 +1,96 @@
+<section>
+    <div>
+        <img src="assets/images/Brigid's Grove.jpg" alt="Brigid's Grove">
+    </div>
+    <article class="citation">
+        <!-- boucle sur la citation -->
+        <div>
+            <?php foreach ($rebozoHeaders as $rebozoHeader) : ?>
+            <p><?= $rebozoHeader['Content'] ?></p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $rebozoHeader['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $rebozoHeader['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer cet article ?!`)">
+                </form>
+            </div>
+            <?php endforeach ?>
+        </div>
+    <!-- boucle sur la citation -->
+	</article>
+</section>
+<section>
+    <article>
+        <p>Le soin rituel Rebozo est pratiqué en binôme, il se décompose en quatre étapes :</p>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($rebozoLists as $rebozoList) : ?>
+            <li><?= $rebozoList['Content'] ?></li>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $rebozoList['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $rebozoList['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer cet article ?!`)">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+</section>
+<section>
+    <article>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($rebozoContents as $rebozoContent) : ?>
+            <p><?= $rebozoContent['Content'] ?></p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $rebozoContent['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $rebozoContent['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer cet article ?!`)">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <h2>Les origines du Rebozo</h2>
+        <!-- boucle sur la conclusion -->
+        <?php foreach ($rebozoFooters as $rebozoFooter) : ?>
+        <p><?= $rebozoFooter['Content'] ?></p>
+        <div class= "button">
+            <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $rebozoFooter['Id'] ?>"method="POST">
+                <input type="submit" value="modification">
+            </form>
+            <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $rebozoFooter['Id'] ?>" method="POST">
+                <input type="submit" value="suppression" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer cet article ?!`)">
+            </form>
+        </div>
+    <?php endforeach ?>
+    <!-- boucle sur la conclusion -->
+	</article>
+</section>
+<section>    
+    <article>
+        <div>
+        <!-- boucle sur la citation -->
+        <?php foreach ($rebozoFAQs as $rebozoFAQ) : ?>
+            <cite><?= $rebozoFAQ['Content'] ?></cite>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $rebozoFAQ['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $rebozoFAQ['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer cet article ?!`)">
+                </form>
+            </div>
+        </div>
+    <?php endforeach ?>
+    <!-- boucle sur la citation -->
+	</article>
+</section>

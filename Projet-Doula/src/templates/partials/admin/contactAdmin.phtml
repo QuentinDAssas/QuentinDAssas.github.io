@@ -1,0 +1,47 @@
+<section>
+    <article>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($welcomes as $welcome) : ?>
+            <p><?= $welcome['Content'] ?><p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $welcome['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                </form>
+                    <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $welcome['Id'] ?>">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+    <article>
+        <div>
+    		<a href="https://www.facebook.com/continuum.doula/" class="facebook"><i class="fab fa-facebook-square"></i></a>
+    		<a href="https://www.instagram.com/continuum.doula/" class="instagram"><i class="fab fa-instagram-square"></i></a>
+		</div>
+		<?php foreach ($phones as $phone) : ?>
+            <p>Téléphone et WhatsApp : <a href="tel:<?= $phone['Content'] ?>"> <?= $phone['Content'] ?></a><p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $phone['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                </form>
+                    <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $phone['Id'] ?>">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($mails as $mail) : ?>
+            <p>Mail : <a href="mailto:<?= $mail['Content'] ?>"><?= $mail['Content'] ?></a><p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $mail['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                </form>
+                    <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $mail['Id'] ?>">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>

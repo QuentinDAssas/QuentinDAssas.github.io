@@ -1,0 +1,58 @@
+
+<section class="welcome">
+    <hr class="welcome-hr">
+    <!-- boucle sur l'intro -->
+    <?php foreach ($intros as $intro) : ?>
+        <p><?= $intro['Content'] ?></p>
+    <?php endforeach ?>
+    <!-- boucle sur l'intro -->
+</section>
+<section>
+    <div class="slide">
+        <?php foreach ($mediaAccueils as $mediaAccueil) : ?>
+            <img src="<?=$mediaAccueil['FilesPath'].$mediaAccueil['Name'] ?>" alt="<?= $mediaAccueil['Content'] ?>"></img>
+        <?php endforeach ?>
+    </div>
+    <article>
+        <!-- boucle sur accueil -->
+        <?php foreach ($accueils as $accueil) : ?>
+            <p><?= $accueil['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur accueil -->
+    </article>
+    <div class="slide">
+        <?php foreach ($mediaAnnouncements as $mediaAnnouncement) : ?>
+            <img src="<?=$mediaAnnouncement['FilesPath'].$mediaAnnouncement['Name'] ?>" alt="<?= $mediaAnnouncement['Content'] ?>"></img>
+        <?php endforeach ?>
+    </div>
+    <article>
+        <!-- boucle sur la conclusion -->
+        <?php foreach ($announcements as $announcement) : ?>
+            <p><?= $announcement['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur la conclusion -->
+    </article>
+</section>
+<section>
+    <article>
+        <!-- boucle sur la conclusion -->
+        <?php foreach ($conclusions as $conclusion) : ?>
+            <p><?= $conclusion['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur la conclusion -->
+    </article>
+</section>
+<section>    
+    <article class="citation">
+        <!-- boucle sur la citation -->
+        <?php foreach ($citations as $citation) : ?>
+            <cite><?= $citation['Content'] ?></cite>
+            <?php foreach ($mediaCitations as $mediaCitation) : ?>
+            <div>
+                <img src="<?=$mediaCitation['FilesPath'].$mediaCitation['Name']?>" alt="<?= $mediaCitation['Content']?>"></img>
+            </div>
+            <?php endforeach ?>
+        <?php endforeach ?>
+        <!-- boucle sur la citation -->
+    </article>
+</section>

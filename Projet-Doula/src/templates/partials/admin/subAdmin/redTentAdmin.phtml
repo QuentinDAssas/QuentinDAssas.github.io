@@ -1,0 +1,96 @@
+<section>
+    <div>
+        <img src="assets/images/Brigid's Grove.jpg" alt="Brigid's Grove">
+    </div>
+    <article class="citation">
+        <!-- boucle sur la citation -->
+        <div>
+            <?php foreach ($redTentHeaders as $redTentHeader) : ?>
+            <p><?= $redTentHeader['Content'] ?></p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $redTentHeader['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $redTentHeader['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer cet article ?!`)">
+                </form>
+            </div>
+            <?php endforeach ?>
+        </div>
+    <!-- boucle sur la citation -->
+	</article>
+</section>
+<section>
+    <h2>Informations & Inscriptions</h2>
+    <article>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($redTentContents as $redTentContent) : ?>
+            <p><?= $redTentContent['Content'] ?></p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $redTentContent['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $redTentContent['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer cet article ?!`)">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($redTentDates as $redTentDate) : ?>
+            <li><?= $redTentDate['Content'] ?></li>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $redTentDate['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $redTentDate['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer cet article ?!`)">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+</section>
+<section>
+    <h2>D'où viennent les tentes rouges</h2>
+    <article>
+    <!-- boucle sur la conclusion -->
+    <?php foreach ($redTentFooters as $redTentFooter) : ?>
+        <p><?= $redTentFooter['Content'] ?></p>
+        <div class= "button">
+            <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $redTentFooter['Id'] ?>"method="POST">
+                <input type="submit" value="modification">
+            </form>
+            <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $redTentFooter['Id'] ?>" method="POST">
+                <input type="submit" value="suppression" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer cet article ?!`)">
+            </form>
+        </div>
+    <?php endforeach ?>
+    <!-- boucle sur la conclusion -->
+	</article>
+</section>
+<section>    
+    <article>
+        <div>
+        <!-- boucle sur la citation -->
+        <?php foreach ($redTentCitations as $redTentCitation) : ?>
+            <cite><?= $redTentCitation['Content'] ?></cite>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $redTentCitation['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $redTentCitation['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return window.confirm(`Êtes vous sûr de vouloir supprimer cet article ?!`)">
+                </form>
+            </div>
+        </div>
+    <?php endforeach ?>
+    <!-- boucle sur la citation -->
+	</article>
+</section>

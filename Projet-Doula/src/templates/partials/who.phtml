@@ -1,0 +1,65 @@
+<section>
+    <h2 class="title-who"><span>Femme</span><span>Mère</span><span>Militante</span><span>Doula</span></h2>
+    <div class="who">
+        <article class="who-presentations">
+        <!-- boucle sur l'intro -->
+            <?php foreach ($presentationsCol1 as $presentationCol1) : ?>
+                <p><?= $presentationCol1['Content'] ?></p>
+                <hr>
+            <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </article>
+        <article class="who-presentations">
+        <!-- boucle sur l'intro -->
+            <?php foreach ($presentationsCol2 as $presentationCol2) : ?>
+                <p><?= $presentationCol2['Content'] ?></p>
+                <hr>
+            <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </article>
+        <figure>
+            <?php foreach ($mediaFigcaptions as $mediaFigcaption) : ?>
+                <img src="<?=$mediaFigcaption['FilesPath'].$mediaFigcaption['Name'] ?>" alt="<?= $mediaFigcaption['Content'] ?>"></img>
+            <?php endforeach ?>
+            <?php foreach ($legends as $legend) : ?>
+                <figcaption><?=$legend['Content']?></figcaption>
+            <?php endforeach ?>
+        </figure>
+    </div>
+</section>
+<section>
+    <article class="who-citations">
+        <!-- boucle sur l'intro -->
+        <?php foreach ($whoCitations as $whoCitation) : ?>
+            <p><?= $whoCitation['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section class="studies">
+    <article class="formations">
+        <h3>Mes formations</h3>
+        <ul>
+        <!-- boucle sur l'intro -->
+            <?php foreach ($formations as $formation) : ?>
+                <li><?= $formation['Content'] ?></li>
+            <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>    
+    </article>
+    <div>
+    <?php foreach ($mediaFormations as $mediaFormation) : ?>
+        <img src="<?=$mediaFormation['FilesPath'].$mediaFormation['Name'] ?>" alt="<?= $mediaFormation['Content'] ?>"></img>
+    <?php endforeach ?>
+    </div>
+    <article class="confs">
+        <h3>Conférences, Sémintaires et Ateliers</h3>
+        <ul>
+        <!-- boucle sur l'intro -->
+            <?php foreach ($confs as $conf) : ?>
+                <li><?= $conf['Content'] ?></li>
+            <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>    
+    </article>
+</section>

@@ -1,0 +1,94 @@
+<section>
+    <h2 class="title-who"><span>Femme</span><span>Mère</span><span>Militante</span><span>Doula</span></h2>
+    <div class="who">
+        <article class="presentations">
+            <div>
+            <!-- boucle sur l'intro -->
+                <?php foreach ($presentationsCol1 as $presentationCol1) : ?>
+                    <p><?= $presentationCol1['Content'] ?></p>
+                    <div class= "button">
+                        <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $presentationCol1['Id'] ?>"method="POST">
+                            <input type="submit" value="modification">
+                        </form>
+                        </form>
+                            <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $presentationCol1['Id'] ?>">
+                        </form>
+                    </div>
+                <?php endforeach ?>
+                <!-- boucle sur l'intro -->
+            </div>
+            <div>
+            <!-- boucle sur l'intro -->
+                <?php foreach ($presentationsCol2 as $presentationCol2) : ?>
+                    <p><?= $presentationCol2['Content'] ?></p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $presentationCol2['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                </form>
+                    <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $presentationCol2['Id'] ?>">
+                </form>
+            </div>
+                <?php endforeach ?>
+                <!-- boucle sur l'intro -->
+            </div>
+        </article>
+        <figure>
+            <?php foreach ($mediaFigcaptions as $mediaFigcaption) : ?>
+                <img src="<?=$mediaFigcaption['FilesPath'].$mediaFigcaption['Name'] ?>" alt="<?= $mediaFigcaption['Content'] ?>"></img>
+            <?php endforeach ?>
+            <?php foreach ($legends as $legend) : ?>
+                <figcaption><?=$legend['Content']?></figcaption>
+                <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $legend['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+            </form>
+                <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $legend['Id'] ?>">
+            </form>
+            </div>
+            <?php endforeach ?>
+        </figure>
+    </div>
+</section>
+<section>
+    <article>
+        <h3>Mes formations</h3>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($formations as $formation) : ?>
+            <li><?= $formation['Content'] ?></li>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $formation['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                </form>
+                    <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $formation['Id'] ?>">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>    
+    </article>
+    <?php foreach ($mediaFormations as $mediaFormation) : ?>
+        <img src="<?=$mediaFormation['FilesPath'].$mediaFormation['Name'] ?>" alt="<?= $mediaFormation['Content'] ?>"></img>
+    <?php endforeach ?>
+    <article>
+        <h3>Conférences, Sémintaires et Ateliers</h3>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($confs as $conf) : ?>
+            <li><?= $conf['Content'] ?></li>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $conf['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+            </form>
+                <input class="delete-btn" type="submit" value="suppression" data-table="article" data-id="<?= $conf['Id'] ?>">
+            </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>    
+    </article>
+</section>

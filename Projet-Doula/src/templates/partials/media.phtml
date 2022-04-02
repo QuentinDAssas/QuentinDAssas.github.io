@@ -1,0 +1,179 @@
+<h2> Photothèques !</h2>
+<!-- Trigger/Open The Modal -->
+<button id="myModalBtn">Ajouter une image</button>
+<div>
+    <h2>Listes des images</h2>
+    <ul>
+        <!-- boucle sur la conclusion -->
+        <?php foreach ($AllMedias as $AllMedia) : ?>
+            <li><a href=<?=$AllMedia['FilesPath'].$AllMedia['Alt'] ?>><?= $AllMedia['Name'] ?></a></li>
+        <?php endforeach ?>
+        <!-- boucle sur la conclusion -->
+    </ul>
+</div>
+<!--<div>-->
+<!--    <h2>Listes des images</h2>-->
+<!--    <figure class="phototheque">-->
+        <!-- boucle sur la conclusion -->
+<!--        <?php foreach ($AllMedias as $AllMedia) : ?>-->
+<!--            <img alt=<?= $AllMedia['Alt'] ?> src="<?=$AllMedia['FilesPath'].$AllMedia['Alt'] ?>"></img>-->
+<!--            <figcaption><?= $AllMedia['Name']?></figcaption>-->
+<!--        <?php endforeach ?>-->
+        <!-- boucle sur la conclusion -->
+<!--    </figure>-->
+<!--</div>-->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+        <form action="index.php?controller=media&task=uploadImg" method="POST" enctype="multipart/form-data">
+        <fieldset>
+            <div>
+                <label for="name">Nom de l'image :</label>
+                <input type="text" name="name"/>
+            </div>
+            <div>
+                <label for="category">Quelle catégorie ?</label>
+                <select id="category"  name="category">
+                    <option value="choose">Choisie la catégorie</option>
+                    <option value="images">Images</option>
+                    <option value="logo">logo</option>
+                    <option value="favicon">favicon</option>
+                </select>
+            </div>
+            <div id="pages" class="hidden">
+                <label for="pages">Quelle page?</label>
+                <select id="pagesSelect" name="pages">
+                    <option value="choose">Choisie la page</option>
+                    <option value="Home">Accueil</option>
+                    <option value="ServicesPages">Mes services</option>
+                    <option value="Who">Qui suis-je ?</option>
+                    <option value="Ressources">Ressources</option>
+                </select>
+            </div>
+            <div id="servicesPages" class="hidden">
+                <label for="servicesPages">Quelle pages des service ?</label>
+                <select id="servicesPagesSelectSelect" name="servicesPages">
+                    <option value="choose">Choisie la page des services</option>
+                    <option value="servicesPages0">Page services</option>
+                    <option value="servicesPages1">Accompagnement à la naissance</option>
+                    <option value="servicesPages2">Accompagnement post-natal</option>
+                    <option value="servicesPages3">Soutien périnatal</option>
+                    <option value="servicesPages4">Blessing way</option>
+                    <option value="servicesPages5">Soin Rebozo</option>
+                    <option value="servicesPages6">Tente rouge</option>
+                </select>
+            </div>
+            <div id="accNaissance" class="hidden">
+                <label for="accNaissance">Sélectionne ça position:</label>
+                <select id="accNaissanceSelect" name="accNaissance">
+                    <option value="choose">Choisie la position</option>
+                    <option value="accNaissance1">Haut de la page</option>
+                    <option value="accNaissance2">Image de séparation</option>
+                    <option value="accNaissance3">Listes des services d'accompagnement post-natal</option>
+                    <option value="accNaissance3">Bas de page</option>
+                </select>
+            </div>
+            <div id="accPostNatal" class="hidden">
+                <label for="accPostNatal">Sélectionne ça position:</label>
+                <select id="accPostNatalSelect" name="accPostNatal">
+                    <option value="choose">Choisie la position</option>
+                    <option value="accPostNatal1">Haut de la page</option>
+                    <option value="accPostNatal2">Image de séparation</option>
+                    <option value="accPostNatal3">Listes des services d'accompagnement à la naissance</option>
+                    <option value="accPostNatal4">Bas de page</option>
+                </select>
+            </div>
+            <div id="soutienPerinatal" class="hidden">
+                <label for="soutienPerinatal">Sélectionne ça position:</label>
+                <select id="soutienPerinatalSelect" name="soutienPerinatal">
+                    <option value="choose">Choisie la position</option>
+                    <option value="soutienPerinatal1">Haut de la page</option>
+                    <option value="soutienPerinatal2">Bas de page</option>
+                </select>
+            </div>
+            <div id="blessingWay" class="hidden">
+                <label for="blessingWay">Sélectionne ça position:</label>
+                <select id="blessingWaySelect" name="blessingWay">
+                    <option value="choose">Choisie la position</option>
+                    <option value="blessingWay1">Haut de la page</option>
+                    <option value="blessingWay2">Bas de page</option>
+                </select>
+            </div>
+            <div id="soinRebozo" class="hidden">
+                <label for="soinRebozo">Sélectionne ça position:</label>
+                <select id="soinRebozoSelect" name="soinRebozo">
+                    <option value="choose">Choisie la position</option>
+                    <option value="soinRebozo1">Haut de la page</option>
+                    <option value="soinRebozo2">Bas de page</option>
+                </select>
+            </div>
+            <div id="tenteRouge" class="hidden">
+                <label for="tenteRouge">Sélectionne ça position:</label>
+                <select id="tenteRougeSelect" name="tenteRouge">
+                    <option value="choose">Choisie la position</option>
+                    <option value="tenteRouge1">Haut de la page</option>
+                    <option value="tenteRouge2">Diapo</option>
+                    <option value="tenteRouge3">Bas de page</option>
+                </select>
+            </div>
+            <div id="home" class="hidden">
+                <label for="homePos">Sélectionne ça position:</label>
+                <select id="homeSelect" name="homePos">
+                    <option value="choose">Choisie la position</option>
+                    <option value="Intro">Intro</option>
+                    <option value="Slide1">Slide1</option>
+                    <option value="Slide2">Slide1</option>
+                    <option value="Conclusion">Conclusion</option>
+                    <option value="Citation">Citation</option>
+                </select>
+            </div>
+            <div id="services" class="hidden">
+                <label for="services">Sélectionne ça position:</label>
+                <select id="servicesSelect" name="homePos">
+                    <option value="choose">Choisie la position</option>
+                    <option value="services1">Accompagnement à la naissance</option>
+                    <option value="services2">Accompagnement post-natal</option>
+                    <option value="services3">Soutien périnatal</option>
+                    <option value="services4">Blessing way</option>
+                    <option value="services5">Soin Rebozo</option>
+                    <option value="services6">Tente rouge</option>
+                </select>
+            </div>
+            <div id="who" class="hidden">
+                <label for="who">Sélectionne ça position:</label>
+                <select id="whoSelect" name="whoPos">
+                    <option value="choose">Choisie la position</option>
+                    <option value="who1">Portrait</option>
+                    <option value="who2">Bas de page</option>
+                </select>
+            </div>
+            <div id="ressources" class="hidden">
+                <label for="ressources">Sélectionne ça position:</label>
+                <select id="ressourcesSelect" name="ressourcesPos">
+                    <option value="choose">Choisie la position</option>
+                    <option value="ressources1">Haut de la page</option>
+                    <option value="ressources2">Bas de page</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="description">Description:</label>
+                <br>
+                <textarea name="desciption" rows="5" cols="35"></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="file">Image :</label>
+                <input type="file" name="image"/>
+            </div>
+            <br>
+            <input type="submit" value="Ajouter l'image">
+        </fieldset>
+    </form>
+  </div>
+</div>
+
+<script src = "assets/JavaScript/MediaModal.js"></script>

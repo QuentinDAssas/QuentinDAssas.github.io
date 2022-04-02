@@ -1,0 +1,23 @@
+<section>
+    <article>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($welcomes as $welcome) : ?>
+            <p><?= $welcome['Content'] ?><p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+    <article>
+        <div>
+    		<a href="https://www.facebook.com/continuum.doula/" class="facebook"><i class="fab fa-facebook-square"></i></a>
+    		<a href="https://www.instagram.com/continuum.doula/" class="instagram"><i class="fab fa-instagram-square"></i></a>
+		</div>
+		<?php foreach ($phones as $phone) : ?>
+            <p>Téléphone et WhatsApp : <a href="tel:<?= $phone['Content'] ?>"> <?= $phone['Content'] ?></a><p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($mails as $mail) : ?>
+            <p>Mail : <a href="mailto:<?= $mail['Content'] ?>"><?= $mail['Content'] ?></a><p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>

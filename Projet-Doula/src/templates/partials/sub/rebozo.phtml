@@ -1,0 +1,60 @@
+<section>
+    <div>
+        <img src="assets/images/Brigid's Grove.jpg" alt="Brigid's Grove">
+    </div>  
+    <article class="citation">
+        <div>
+        <!-- boucle sur la citation -->
+        <?php foreach ($rebozoHeaders as $rebozoHeader) : ?>
+            <p><?= $rebozoHeader['Content'] ?></p>
+        <?php endforeach ?>
+        </div>
+    <!-- boucle sur la citation -->
+	</article>
+</section>
+<section>
+    <article>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($rebozoContents as $rebozoContent) : ?>
+            <p><?= $rebozoContent['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($rebozoLists as $rebozoList) : ?>
+            <li><?= $rebozoList['Content'] ?></li>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+</section>
+<section>
+    <article>
+        <h2>Mes consœurs</h2>
+        <a href="https://www.instagram.com/mamaaout/"><img class="consœurs" src="assets/images/Sarah.jpg" alt="Sarah">Sarah</a>
+        <a href="https://www.instagram.com/victoirescherrer_doula//"><img class="consœurs" src="assets/images/Victoire Scherrer Doula.jpg" alt="Victoire Scherrer">Victoire</a>
+    </article>
+    <article>
+    <h2>Les origines du Rebozo</h2>
+    <!-- boucle sur la conclusion -->
+    <?php foreach ($rebozoFooters as $rebozoFooter) : ?>
+        <p><?= $rebozoFooter['Content'] ?></p>
+    <?php endforeach ?>
+    <!-- boucle sur la conclusion -->
+	</article>
+</section>
+<section>    
+    <article>
+        <div>
+        <!-- boucle sur la citation -->
+        <?php foreach ($rebozoFAQs as $rebozoFAQ) : ?>
+            <cite><?= $rebozoFAQ['Content'] ?></cite>
+        </div>
+    <?php endforeach ?>
+    <!-- boucle sur la citation -->
+	</article>
+</section>

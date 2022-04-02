@@ -1,0 +1,54 @@
+<section>
+    <div>
+        <img src="assets/images/Brigid's Grove.jpg" alt="Brigid's Grove">
+    </div>  
+    <article class="citation">
+        <div>
+        <!-- boucle sur la citation -->
+        <?php foreach ($blessingWayHeaders as $blessingWayHeader) : ?>
+            <p><?= $blessingWayHeader['Content'] ?></p>
+        <?php endforeach ?>
+        </div>
+    <!-- boucle sur la citation -->
+	</article>
+</section>
+<section>
+    <article>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($blessingWayContents as $blessingWayContent) : ?>
+            <p><?= $blessingWayContent['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($blessingWayLists as $blessingWayList) : ?>
+            <li><?= $blessingWayList['Content'] ?></li>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+</section>
+<section>
+    <article>
+    <!-- boucle sur la conclusion -->
+    <?php foreach ($blessingWayFooters as $blessingWayFooter) : ?>
+        <p><?= $blessingWayFooter['Content'] ?></p>
+    <?php endforeach ?>
+    <!-- boucle sur la conclusion -->
+	</article>
+</section>
+<section>    
+    <article>
+        <div>
+        <!-- boucle sur la citation -->
+        <?php foreach ($blessingWayCitations as $blessingWayCitation) : ?>
+            <cite><?= $blessingWayCitation['Content'] ?></cite>
+        </div>
+    <?php endforeach ?>
+    <!-- boucle sur la citation -->
+	</article>
+</section>

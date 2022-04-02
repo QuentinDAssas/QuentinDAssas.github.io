@@ -1,0 +1,62 @@
+
+<h2>
+    Mention légales
+</h2>
+<section>
+    <article>
+        <h3>Identité</h3>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($identitys as $identity) : ?>
+            <p><?= $identity['Content'] ?><p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+</section>
+<section>
+    <article>
+        <h3>Personne morale</h3>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($morals as $moral) : ?>
+            <p><?= $moral['Content'] ?><p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <h3>Conditions d'utilisation</h3>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($terms as $term) : ?>
+            <p><?= $term['Content'] ?><p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <h3>Liens</h3>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($links as $link) : ?>
+            <p><?= $link['Content'] ?><p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <h3>Confidentialité</h3>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($confidentialities as $confidentiality) : ?>
+            <p><?= $confidentiality['Content'] ?><p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($otherLegals as $otherLegal) : ?>
+            <p><?= $otherLegal['Content'] ?><p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>

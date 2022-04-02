@@ -1,0 +1,142 @@
+<h2>Tarifs et Modalités</h2>
+<section class="tarifs">
+    <article>
+        <h3>Première rencontre</h3>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($firstMeets as $firstMeet) : ?>
+            <li><?= $firstMeet['Content'] ?></li>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+    <article>
+        <h3>Séance individuelle, soutien périnatal</h3>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($individualSessions as $individualSession) : ?>
+            <li><?= $individualSession['Content'] ?></li>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+    <article>
+        <h3>Séance inclue dans un forfait</h3>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($packageSessions as $packageSession) : ?>
+            <li><?= $packageSession['Content'] ?></li>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+    <article>
+        <h3>Tente Rouge</h3>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($redTentePrices as $redTentePrice) : ?>
+            <li><?= $redTentePrice['Content'] ?></li>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+    <article>
+        <h3>Blessing Way</h3>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($blessingPrices as $blessingPrice) : ?>
+            <li><?= $blessingPrice['Content'] ?></li>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+    <article>
+        <h3>Soin Rituel Rebozo</h3>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($rebozoRituals as $rebozoRitual) : ?>
+            <li><?= $rebozoRitual['Content'] ?></li>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+</section>
+<section>
+    <h2>Forfaits</h2>
+    <div class="packages">
+        <div class="packages-list">
+            <article>
+                <h3>Un temps pour soi</h3>
+                <ul>
+                <!-- boucle sur l'intro -->
+                <?php foreach ($timeYourselfs as $timeYourself) : ?>
+                    <li><?= $timeYourself['Content'] ?></li>
+                <?php endforeach ?>
+                <!-- boucle sur l'intro -->
+                </ul>
+            </article>
+            <article>
+                <h3>Un accompagnement en continuité</h3>
+                <ul>
+                <!-- boucle sur l'intro -->
+                <?php foreach ($continuousSupports as $continuousSupport) : ?>
+                    <li><?= $continuousSupport['Content'] ?></li>
+                <?php endforeach ?>
+                <!-- boucle sur l'intro -->
+                </ul>
+            </article>
+            <article>
+                <h3>*Présence à l'accouchement</h3>
+                <ul>
+                <!-- boucle sur l'intro -->
+                <?php foreach ($childbirths as $childbirth) : ?>
+                    <li><?= $childbirth['Content'] ?></li>
+                <?php endforeach ?>
+                <!-- boucle sur l'intro -->
+                </ul>
+            </article>
+        </div>
+        <div class="packages-rule">
+            <article>
+                <!-- boucle sur l'intro -->
+                <?php foreach ($packageRules as $packageRule) : ?>
+                    <p><?= $packageRule['Content'] ?></p>
+                <?php endforeach ?>
+                <!-- boucle sur l'intro -->
+            </article>
+        </div>
+    </div>
+</section>
+<section>
+    <article class="rules">
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($rules as $rule) : ?>
+            <p><?= $rule['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+</section>
+<section>
+    <article class="paiements">
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($paiements as $paiement) : ?>
+            <li><?= $paiement['Content'] ?></li>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+</section>
+<section>
+    <article>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($arrangements as $arrangement) : ?>
+            <p><?= $arrangement['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+</section>

@@ -1,0 +1,50 @@
+<section class="services-summary">
+    <div>
+        <h3>Accompagnement à la naissance</h3>
+        <div class="bubble">
+        <?php foreach ($summaryBirths as $summaryBirth) : ?>
+            <a href="index.php?controller=Sub\Birth"><img src="<?=$summaryBirth['FilesPath'].$summaryBirth['Name']?>" alt="<?= $summaryBirth['Content']?>"></a>
+        <?php endforeach ?>
+        </div>
+    </div>
+    <div>
+        <h3>Accompagnement post-natal</h3>
+        <div class="bubble">
+        <?php foreach ($summaryPostnatals as $summaryPostnatal) : ?>
+            <a href="index.php?controller=Sub\Postnatal"><img src="<?=$summaryPostnatal['FilesPath'].$summaryPostnatal['Name']?>" alt="<?= $summaryPostnatal['Content']?>"></a>
+        <?php endforeach ?>
+        </div>
+    </div>
+    <div>
+        <h3>Soutien périnatal</h3>
+        <div class="bubble">
+        <?php foreach ($summaryPerinatals as $summaryPerinatal) : ?>
+            <a href="index.php?controller=Sub\Perinatal"><img src="<?=$summaryPerinatal['FilesPath'].$summaryPerinatal['Name']?>" alt="<?= $summaryPerinatal['Content']?>"></a>
+        <?php endforeach ?>
+        </div>
+    </div>
+    <div>
+        <h3>Blessing way</h3>
+        <div class="bubble">
+        <?php foreach ($summaryBlessingWays as $summaryBlessingWay) : ?>
+            <a href="index.php?controller=Sub\BlessingWay"><img src="<?=$summaryBlessingWay['FilesPath'].$summaryBlessingWay['Name']?>" alt="<?= $summaryBlessingWay['Content']?>"></a>
+        <?php endforeach ?>
+        </div>
+    </div>
+    <div>
+        <h3>Soin Rebozo</h3>
+        <div class="bubble">
+        <?php foreach ($summaryRebozos as $summaryRebozo) : ?>
+            <a href="index.php?controller=Sub\Rebozo"><img src="<?=$summaryRebozo['FilesPath'].$summaryRebozo['Name']?>" alt="<?= $summaryRebozo['Content']?>"></a>
+        <?php endforeach ?>
+        </div>
+    </div>
+    <div>
+        <h3>Tente rouge</h3>
+        <div class="bubble">
+        <?php foreach ($summaryRedTents as $summaryRedTent) : ?>
+            <a href="index.php?controller=Sub\RedTent"><img src="<?=$summaryRedTent['FilesPath'].$summaryRedTent['Name']?>" alt="<?= $summaryRedTent['Content']?>"></a>
+        <?php endforeach ?>
+        </div>
+    </div>
+</section>

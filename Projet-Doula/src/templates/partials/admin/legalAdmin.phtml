@@ -1,0 +1,110 @@
+
+<h2>
+    Mention légales
+</h2>
+<section>
+    <article>
+        <h3>Identité</h3>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($identitys as $identity) : ?>
+            <p><?= $identity['Content'] ?><p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $identity['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $identity['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return validate()">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+</section>
+<section>
+    <article>
+        <h3>Personne morale</h3>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($morals as $moral) : ?>
+            <p><?= $moral['Content'] ?><p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $moral['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $moral['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return validate()">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <h3>Conditions d'utilisation</h3>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($terms as $term) : ?>
+            <p><?= $term['Content'] ?><p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $term['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $term['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return validate()">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <h3>Liens</h3>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($links as $link) : ?>
+            <p><?= $link['Content'] ?><p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $link['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $link['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return validate()">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <h3>Confidentialité</h3>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($confidentialities as $confidentiality) : ?>
+            <p><?= $confidentiality['Content'] ?><p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $confidentiality['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $confidentiality['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return validate()">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($otherLegals as $otherLegal) : ?>
+            <p><?= $otherLegal['Content'] ?><p>
+            <div class= "button">
+                <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $otherLegal['Id'] ?>"method="POST">
+                    <input type="submit" value="modification">
+                </form>
+                <form action ="index.php?controller=Admin\Manage&task=delete&id=<?= $otherLegal['Id'] ?>" method="POST">
+                    <input type="submit" value="suppression" onclick="return validate()">
+                </form>
+            </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>

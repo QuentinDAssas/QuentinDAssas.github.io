@@ -1,0 +1,54 @@
+<section>    
+    <article class="citation">
+        <div>
+            <img src="assets/images/Brigid's Grove.jpg" alt="Brigid's Grove">
+        </div>
+        <div>
+        <!-- boucle sur la citation -->
+        <?php foreach ($postnatalHeaders as $postnatalHeader) : ?>
+            <p><?= $postnatalHeader['Content'] ?></p>
+        <?php endforeach ?>
+        </div>
+    <!-- boucle sur la citation -->
+	</article>
+</section>
+<section>
+    <article>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($postnatalContents as $postnatalContent) : ?>
+            <p><?= $postnatalContent['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($postnatalLists as $postnatalList) : ?>
+            <li><?= $postnatalList['Content'] ?></li>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+</section>
+<section>
+    <article>
+    <!-- boucle sur la conclusion -->
+    <?php foreach ($postnatalFooters as $postnatalFooter) : ?>
+        <p><?= $postnatalFooter['Content'] ?></p>
+        <div class= "button">
+    <?php endforeach ?>
+    <!-- boucle sur la conclusion -->
+	</article>
+</section>
+<section>    
+    <article>
+        <div>
+        <!-- boucle sur la citation -->
+        <?php foreach ($postnatalCitations as $postnatalCitation) : ?>
+            <cite><?= $postnatalCitation['Content'] ?></cite>
+    <?php endforeach ?>
+    <!-- boucle sur la citation -->
+	</article>
+</section>

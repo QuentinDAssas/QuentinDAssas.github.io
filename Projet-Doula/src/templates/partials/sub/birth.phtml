@@ -1,0 +1,54 @@
+<section>    
+    <article class="citation">
+        <div>
+        <!-- boucle sur la citation -->
+        <?php foreach ($birthHeaders as $birthHeader) : ?>
+            <p><?= $birthHeader['Content'] ?></p>
+        <?php endforeach ?>
+        </div>
+        <div>
+            <img src="assets/images/Brigid's Grove.jpg" alt="Brigid's Grove">
+        </div>    
+    <!-- boucle sur la citation -->
+	</article>
+</section>
+<section>
+    <article>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($birthContents as $birthContent) : ?>
+            <p><?= $birthContent['Content'] ?></p>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </article>
+</section>
+<section>
+    <article>
+        <ul>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($birthLists as $birthList) : ?>
+            <li><?= $birthList['Content'] ?></li>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+        </ul>
+    </article>
+</section>
+<section>
+    <article>
+    <!-- boucle sur la conclusion -->
+    <?php foreach ($birthFooters as $birthFooter) : ?>
+        <p><?= $birthFooter['Content'] ?></p>
+    <?php endforeach ?>
+    <!-- boucle sur la conclusion -->
+	</article>
+</section>
+<section>    
+    <article>
+        <div>
+        <!-- boucle sur la citation -->
+        <?php foreach ($birthCitations as $birthCitation) : ?>
+            <cite><?= $birthCitation['Content'] ?></cite>
+        </div>
+    <?php endforeach ?>
+    <!-- boucle sur la citation -->
+	</article>
+</section>

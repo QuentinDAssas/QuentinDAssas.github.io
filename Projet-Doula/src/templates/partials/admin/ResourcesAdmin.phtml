@@ -1,0 +1,172 @@
+<section>
+    <h2>Ressources autour de la Périnatalité</h2>
+    <div class="align">
+        <?php foreach ($mediaLoirets as $mediaLoiret) : ?>
+            <img src="<?=$mediaLoiret['FilesPath'].$mediaLoiret['Name'] ?>" alt="<?= $mediaLoiret['Content'] ?>">
+        <?php endforeach ?>
+    </div>
+    <div class="perinatal">
+        <article class="loiret">
+            <div>
+                <h3>Dans le Loiret</h3>
+                <ul>
+                <!-- boucle sur l'intro -->
+                <?php foreach ($linksLoiret as $loiret) : ?>
+                    <li><a href="<?= $loiret['Link'] ?>"><?= $loiret['Name'] ?></a></li>
+                    <div class= "button">
+                        <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $loiret['Id'] ?>"method="POST">
+                            <input type="submit" value="modification">
+                        </form>
+                            <input class="delete-btn" type="submit" value="suppression" data-table="link" data-id="<?= $loiret['Id'] ?>">
+                        </form>
+                    </div>
+                <?php endforeach ?>
+                <!-- boucle sur l'intro -->
+                </ul>
+            </div>
+            <div>
+                <h3>Maternité du Loiret</h3>
+                <ul>
+                <!-- boucle sur l'intro -->
+                <?php foreach ($linksMaternity as $maternity) : ?>
+                    <li><a href="<?= $maternity['Link'] ?>"><?= $maternity['Name'] ?></a></li>
+                    <div class= "button">
+                        <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $maternity['Id'] ?>"method="POST">
+                            <input type="submit" value="modification">
+                        </form>
+                            <input class="delete-btn" type="submit" value="suppression" data-table="link" data-id="<?= $maternity['Id'] ?>">
+                        </form>
+                    </div>
+                <?php endforeach ?>
+                <!-- boucle sur l'intro -->
+                </ul>            
+            </div>
+            <div>
+                <h3>Associations Loirétaines</h3>
+                <ul>
+                <!-- boucle sur l'intro -->
+                <?php foreach ($linksAssociations as $associations) : ?>
+                    <li><a href="<?= $associations['Link'] ?>"><?= $associations['Name'] ?></a></li>
+                    <div class= "button">
+                        <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $associations['Id'] ?>"method="POST">
+                            <input type="submit" value="modification">
+                        </form>
+                            <input class="delete-btn" type="submit" value="suppression" data-table="link" data-id="<?= $associations['Id'] ?>">
+                        </form>
+                    </div>
+                <?php endforeach ?>
+                <!-- boucle sur l'intro -->
+                </ul>            
+            </div>
+        </article>
+        <article class="loiret">
+            <h3>Autres</h3>
+            <ul>
+            <!-- boucle sur l'intro -->
+            <?php foreach ($linksOther as $others) : ?>
+                <li><a href="<?= $others['Link'] ?>"><?= $others['Name'] ?></a></li>
+                <div class= "button">
+                    <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $others['Id'] ?>"method="POST">
+                        <input type="submit" value="modification">
+                    </form>
+                        <input class="delete-btn" type="submit" value="suppression" data-table="link" data-id="<?= $others['Id'] ?>">
+                    </form>
+                </div>
+            <?php endforeach ?>
+            <!-- boucle sur l'intro -->
+            </ul>  
+        </article>
+    </div>
+</section>
+<section>
+    <h2>Bibliothèque</h2>
+    <div class="align">
+    <?php foreach ($mediaLibraries as $mediaLibrarie) : ?>
+        <img src="<?=$mediaLibrarie['FilesPath'].$mediaLibrarie['Name'] ?>" alt="<?= $mediaLibrarie['Content'] ?>">
+    <?php endforeach ?>
+    </div>
+    <div>
+        <!-- boucle sur l'intro -->
+        <?php foreach ($libraries as $librarie) : ?>
+            <p><?= $librarie['Content'] ?></p>
+                <div class= "button">
+                    <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $librarie['Id'] ?>"method="POST">
+                        <input type="submit" value="modification">
+                    </form>
+                        <input class="delete-btn" type="submit" value="suppression" data-table="link" data-id="<?= $librarie['Id'] ?>">
+                    </form>
+                </div>
+        <?php endforeach ?>
+        <!-- boucle sur l'intro -->
+    </div>
+    <div class="libraries">
+        <article>
+            <h3>Grossesse et Accouchement</h3>
+            <ul>
+            <!-- boucle sur l'intro -->
+            <?php foreach ($pregnancys as $pregnancy) : ?>
+                <li><?= $pregnancy['Content'] ?></li>
+                <div class= "button">
+                    <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $pregnancy['Id'] ?>"method="POST">
+                        <input type="submit" value="modification">
+                    </form>
+                        <input class="delete-btn" type="submit" value="suppression" data-table="link" data-id="<?= $pregnancy['Id'] ?>">
+                    </form>
+                </div>
+            <?php endforeach ?>
+            <!-- boucle sur l'intro -->
+            </ul>
+        </article>
+        <article>
+            <h3>Post-Natal et Parentalité</h3>
+            <ul>
+            <!-- boucle sur l'intro -->
+            <?php foreach ($postnatalLibraries as $postnatalLibrarie) : ?>
+                <li><?= $postnatalLibrarie['Content'] ?></li>
+                <div class= "button">
+                    <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $postnatalLibrarie['Id'] ?>"method="POST">
+                        <input type="submit" value="modification">
+                    </form>
+                        <input class="delete-btn" type="submit" value="suppression" data-table="link" data-id="<?= $postnatalLibrarie['Id'] ?>">
+                    </form>
+                </div>
+            <?php endforeach ?>
+            <!-- boucle sur l'intro -->
+            </ul>
+        </article>
+        <article>
+            <h3>Autour du féminin et du féminisme</h3>
+            <ul>
+            <!-- boucle sur l'intro -->
+            <?php foreach ($feminisms as $feminism) : ?>
+                <li><?= $feminism['Content'] ?></li>
+                <div class= "button">
+                    <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $feminism['Id'] ?>"method="POST">
+                        <input type="submit" value="modification">
+                    </form>
+                        <input class="delete-btn" type="submit" value="suppression" data-table="link" data-id="<?= $feminism['Id'] ?>">
+                    </form>
+                </div>
+            <?php endforeach ?>
+            <!-- boucle sur l'intro -->
+            </ul>
+        </article>
+        <article>
+            <h3>Jeunesse</h3>
+            <ul>
+            <!-- boucle sur l'intro -->
+            <?php foreach ($youths as $youth) : ?>
+                <li><?= $youth['Content'] ?></li>
+                <div class= "button">
+                    <form action ="index.php?controller=Admin\Manage&task=show&id=<?= $youth['Id'] ?>"method="POST">
+                        <input type="submit" value="modification">
+                    </form>
+                        <input class="delete-btn" type="submit" value="suppression" data-table="link" data-id="<?= $youth['Id'] ?>">
+                    </form>
+                </div>
+            <?php endforeach ?>
+            <!-- boucle sur l'intro -->
+            </ul>
+        </article>
+    </div>
+</section>

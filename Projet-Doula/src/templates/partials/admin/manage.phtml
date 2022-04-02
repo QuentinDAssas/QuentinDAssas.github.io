@@ -1,0 +1,63 @@
+<?php
+if(!$article):
+?>
+    <form action="index.php?controller=Admin\Manage&task=insert" method="POST">
+        <fieldset id="type">
+            <div id="pages">
+                <label for="pages">Quelle page?</label>
+                <select id="pagesSelect" name="pages">
+                    <option value="">Choisie la page</option>
+                    <option value="Home">Accueil</option>
+                    <option value="Services">Mes services</option>
+                    <option value="Price">Tarifs, Forfaits et Modalités</option>
+                    <option value="Who">Qui suis-je ?</option>
+                    <option value="Contact">Contact</option>
+                    <option value="Resources">Ressources</option>
+                    <option value="Legals">Mentions légales</option>
+                </select>
+            </div>
+            <div id="selectorCat">
+            </div>
+            <div id="description">
+                <label for="content">Saississez votre texte: </label>
+        		<textarea name="content" rows="5" cols="35" wrap="hard" placeholder="Saississez le texte"></textarea>
+    		</div>
+    		<input type="submit" value="Ajouter">
+        </fieldset>
+    </form>
+<?php
+else:
+?>
+    <form action="index.php?controller=Admin\Manage&task=update&id=<?= $article['Id'] ?>" method="POST">
+        <fieldset>
+            <?php
+            if(!$article['subPages']):
+            ?>
+            <div>
+                <p> L'article se trouve sur la page <?= $article['Page'] ?> et dans la catégorie <?= $article['Category'] ?>.</p>
+            </div>
+            <?php
+            else:
+            ?>
+            <div>
+                <p> L'article se trouve sur la page <?= $article['Page'] ?> sous la page <?= $article['subPages'] ?> et dans la catégorie <?= $article['Category'] ?>.</p>
+            </div>  
+            <?php 
+            endif;
+            ?>
+            <div>
+                <label for="content">Modifiez votre texte: </label>
+                <div>
+        		    <textarea name="content" cols="125" rows="15" wrap="hard"><?= $article['Content'] ?></textarea>
+        		</div>
+    		</div>
+    		<input type="submit" value="Modifier">
+            <form action ="index.php?controller=Admin\Manage&task=return" method="POST">
+                <input type="submit" value="Retour">
+            </form>
+        </fieldset>
+    </form>
+<?php 
+endif;
+?>
+<script src = "assets/JavaScript/Menu.js"></script>
